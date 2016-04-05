@@ -1,5 +1,5 @@
 # lambda-cnamer
-Update R53 cname with EC2 public dns when instance enters running state. Cname stored in DynamoDB.
+Update R53 cname with EC2 public DNS when instance enters running state. Cname stored in DynamoDB.
 
 ## Requirements
 
@@ -27,20 +27,26 @@ Update R53 cname with EC2 public dns when instance enters running state. Cname s
 
 ### 2. Create Lambda Function 
 
-1. AWS Console -> Lambda -> Create a lambda function
-  *Select blueprint: **Skip**
-3. Configure function:
+AWS Console -> Lambda -> Create a lambda function
 
-    Name: arbitrary
-        Description: arbitr    Runtime: Node.js
+Select blueprint: **Skip**
 
-Code entry type: Edit code inline (paste contents of lambda.js)
+Configure function:
+
+   * Name: arbitrary
+   
+   * Description: arbitrary
+   
+   * Runtime: Node.js
+
+   * Code entry type: Edit code inline (paste contents of lambda.js)
+
 
 **NOTE:** Edit config parameters as needed (**region** and **dynamoTableName**)
 
-Handler: index.handler
+   * Handler: index.handler
 
-Role: use existing role (lambda-cnamer-role)
+   * Role: use existing role (lambda-cnamer-role)
 
 Click Next
 
@@ -49,11 +55,10 @@ Click "Create Function"
 
 ### 3. Create CloudWatch Event Rule
 
+
 AWS Console -> CloudWatch -> Rules -> Create rule
 
-Event selector: 
-
-Select Event Source: EC2 instance state change notification
+Event selector -> Select Event Source -> EC2 instance state change notification
 
 Specific state(s): Running
 
