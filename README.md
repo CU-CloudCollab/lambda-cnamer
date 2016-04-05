@@ -74,16 +74,22 @@ Click "Create Rule"
 ### 4. Create DynamoDB CNAME item
 
 AWS Console -> DynamoDB -> Tables -> Select Table
+
 Click the Items tab
+
 Click "Create item"
+
 Click the plus under instanceId
+
 Click Append,String
+
 Field: **cname**, String: [servername.fqdn]
+
 Click Save
 
 
     
 
-Test:
+**Test:**
 
 Create a new entry in DynamoDB mapping an existing instanceId to a CNAME in Dyna
